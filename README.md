@@ -1,5 +1,7 @@
 # SimpleDEX
  Example DEX built using OasisDEX, Dai.js, DAI-UI, using the frontend boilerplate nextjs-daijs-dai-ui-example
+ 
+ Current revision works with Kovan, on the ETH-DAI pair.
 ## Getting Started
 
 For development run:

@@ -10,28 +10,28 @@ const Index = () => {
   return (
     <Container>
       <Box sx={{ mt: 2, ml: [0, 'auto'], mr: [null, 0] }}>
-        <Heading variant="mediumHeading">Mini-exchange</Heading>
-          <Grid sx={{ my: 4 }}>
+        <Heading variant="mediumHeading">SimpleDEX</Heading>
+          <Grid  sx={{ my: 2, mx: [2, 'auto'], p: 0, pb: 3, maxWidth: '800px' }}>
             <Card>
               <Heading sx={{ pb: 2 }} variant="smallHeading">
                 Balances
               </Heading>
-
               <Balances/>
 
             </Card>
 
-            <Card sx={{ my: 2, mx: [2, 'auto'], p: 0, pb: 3, maxWidth: '500px' }}>
+            <Card>
               <Flex sx={{ p: 3, alignItems: 'center', justifyContent: 'space-between' }}>
-                <Text sx={{ fontWeight: 'bold', fontSize: 4 }}>ETH Sell Offers</Text>
+                <Text sx={{ fontWeight: 'bold', fontSize: 4 }}>Buy ETH for DAI</Text>
               </Flex>
-              <Orders give={weth} get={dai}/>
+              <Orders get={weth} give={dai} giveLabel={'DAI'} getLabel={'WETH'}/>
             </Card>
-            <Card sx={{ my: 2, mx: [2, 'auto'], p: 0, pb: 3, maxWidth: '500px' }}>
+
+            <Card>
               <Flex sx={{ p: 3, alignItems: 'center', justifyContent: 'space-between' }}>
-                <Text sx={{ fontWeight: 'bold', fontSize: 4 }}>ETH Buy Offers</Text>
+                <Text sx={{ fontWeight: 'bold', fontSize: 4 }}>Sell ETH for DAI</Text>
               </Flex>
-              <Orders give={dai} get={weth}/>
+              <Orders get={dai} give={weth} giveLabel={'WETH'} getLabel={'DAI'}/>
             </Card>
 
           </Grid>
