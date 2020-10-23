@@ -2,6 +2,8 @@
 import { Container, jsx, Card, Heading, Text, Grid, Box, Flex } from 'theme-ui';
 import Orders from '../components/Orders';
 import Balances from '../components/Balances';
+import Wrap from '../components/Wrap';
+import MyOrders from '../components/MyOrders';
 
 const Index = () => {
   const weth = '0xd0a1e359811322d97991e03f863a0c30c2cf029c'; //'0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2';
@@ -17,7 +19,13 @@ const Index = () => {
                 Balances
               </Heading>
               <Balances/>
+            </Card>
 
+            <Card>
+              <Heading sx={{ pb: 2 }} variant="smallHeading">
+                Wrap/Unwrap ETH
+              </Heading>
+              <Wrap/>
             </Card>
 
             <Card>
@@ -32,6 +40,13 @@ const Index = () => {
                 <Text sx={{ fontWeight: 'bold', fontSize: 4 }}>Sell ETH for DAI</Text>
               </Flex>
               <Orders get={dai} give={weth} giveLabel={'WETH'} getLabel={'DAI'}/>
+            </Card>
+
+            <Card>
+              <Heading sx={{ pb: 2 }} variant="smallHeading">
+                My Orders
+              </Heading>
+              <MyOrders get={dai} give={weth} giveLabel={'WETH'} getLabel={'DAI'}/>
             </Card>
 
           </Grid>
